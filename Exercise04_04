@@ -1,0 +1,7 @@
+/* Jackson Maurer
+8 September, 2017
+Excerise 04_04
+The code prints out the command in the console using print() and println()
+*/
+print("myprecalcgrade ");
+println(100-99);
