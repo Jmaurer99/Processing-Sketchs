@@ -1,0 +1,8 @@
+/* Jackson Maurer
+8 September, 2017
+Excerise 04_03
+The code provides a function but does not return a variable
+*/
+  size(400,400) ;
+  background(150);
+  ellipse(100,100,200,200);
