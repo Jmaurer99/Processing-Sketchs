@@ -1,0 +1,16 @@
+/* Jackson Maurer
+9-18-17
+Exercise06_02
+This code creates a house out of rectangles and triangles
+*/
+size(500,500) ;
+background(13,125,200) ;
+rect(100,350,300,200) ;
+fill(250,300,0) ;
+triangle(100,350,400,350,250,250) ;
+fill(230,200,30) ;
+rect(220,400,70,250);
+fill(200,75) ;
+rect(325,400,50,50);
+line(350,400,350,450) ;
+line(325,425,375,425);
