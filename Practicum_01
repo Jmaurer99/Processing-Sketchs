@@ -1,0 +1,76 @@
+/*
+*
+ * Practicum one
+ * 
+ * Practium one
+ * 
+ * J.C Maurer
+ * 9-19-17
+ * 
+ * This code uses to 2 intergers x and y. The y interger is used for where the rectangle and triangle are placed. 
+ *The x interger is used for a line, and the line moves across the screen. I have rectangles that are use the mouseX and mouseY to move around a rectangle.
+ *The one conditional is locating the rectangle and triangle when y is greater than 0.
+ *I use both color modes RBG and HSB. The HSB is for the moving rectangles, and the RBG is used for the rectangles and traingles.
+ *
+ * 
+ * 
+ * INSTRUCTIONS
+ *
+ */
+
+boolean savePDF;
+
+// Stuff you need but can safely ignore right now
+import processing.pdf.*;
+import java.util.Calendar;
+int x=10
+int y=23;
+// Code you want to have run once goes here
+void setup() { 
+  size(700, 700);
+  background(0);
+} 
+
+// Code you loop until you stop the sketch
+ void draw() { 
+  colorMode(HSB, 50, 5, 55);
+  line(x, 50, 35, x);
+  x+=5;
+  fill(random(100), random(100), random(100));
+  rect(mouseX, mouseY, mouseX, mouseY);
+  frameRate(25);
+  colorMode(RGB);
+   fill(0,0,255);
+  ellipse(500,400,100,50);
+  fill(25,50,10);
+  rect(random(300),random(200),random(200),random(100));
+  fill(0,255,0);
+  if (y<0); 
+  {
+    triangle(20, 200, 100, 50, 100, 150);
+  }
+  rect(0, 100, 150, 200);
+}
+  
+
+// **Leave this conditional here but maybe modify if you understand what it does**
+if (savePDF) {
+  beginRecord(PDF, timestamp()+".pdf");
+  noStroke();\
+
+// **Printing function. Leave here.**
+
+void keyReleased() {
+  if (key == 'c' || key == 'C') GenerativeDesign.saveASE(this, colors, timestamp()+".ase");
+  if (key == 's' || key == 'S') saveFrame(timestamp()+"_##.png");
+  if (key == 'p' || key == 'P') savePDF = true;
+
+  if (key == '1') interpolateShortest = true;
+  if (key == '2') interpolateShortest = false;
+}
+
+// timestamp
+String timestamp() {
+  Calendar now = Calendar.getInstance();
+  return String.format("%1$ty%1$tm%1$td_%1$tH%1$tM%1$tS", now);
+}
