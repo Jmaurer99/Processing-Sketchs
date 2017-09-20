@@ -27,8 +27,8 @@ int x=10
 int y=23;
 // Code you want to have run once goes here
 void setup() { 
-  size(700, 700);
-  background(0);
+  size(1400, 1400);
+  background(255);
 } 
 
 // Code you loop until you stop the sketch
