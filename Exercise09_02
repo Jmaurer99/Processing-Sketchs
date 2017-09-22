@@ -1,0 +1,15 @@
+/*Jackson Maurer
+Exercise09-02
+9-9-17
+This code shows oppopsite color modes
+*/
+void setup(){
+  size(500,500);
+  colorMode(RGB);
+  background(55,100,75);
+}
+void draw(){
+  colorMode(HSB,20,30,20);
+  fill(25,5,20);
+  rect(mouseX,mouseY,mouseX,mouseY);
+}
