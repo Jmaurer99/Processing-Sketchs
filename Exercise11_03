@@ -1,0 +1,12 @@
+/* Jackson Maurer
+9-25-2017
+uses variables to do mathematical equations
+Excercise11_03
+*/
+int x=5;
+int y=6;
+int z=7;
+size(200,200);
+print(x+y-z);
+print(y+z);
+print(x*z-z*y);
