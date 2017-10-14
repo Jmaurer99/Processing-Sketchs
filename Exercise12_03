@@ -1,0 +1,13 @@
+/* Jackson Maurer
+9-29-2017
+this code is using framerate
+Excercise12_03
+*/
+
+void setup() {
+  size(200,200);
+  frameRate(1);
+}
+void draw() {
+ rect(mouseX,mouseY,mouseX,mouseY);
+}
