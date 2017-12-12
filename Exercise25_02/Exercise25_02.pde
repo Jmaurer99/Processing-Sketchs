@@ -2,6 +2,7 @@
 Coding
 Dr. von Nagy
 December 11 2017
+This code takes the same bos and sphere in the last exercise and now rotates it using radians and framecount.
 */
 int i=0;
 String Supreme="Supreme";
