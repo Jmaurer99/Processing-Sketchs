@@ -2,6 +2,7 @@
 Coding
 Dr. von Nagy
 December 11 2017
+This code takes two boxes and has them intersect at the middle of tha canvas with a sphere.
 */
 int i=0;
 String Supreme="Supreme";
