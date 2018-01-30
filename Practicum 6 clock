@@ -1,0 +1,52 @@
+/* Jackson Maurer
+coding 
+Dr. Von Nagy
+1-30-18
+*/
+float x;
+int time=0;
+
+void setup(){
+  size(500,500);
+  background(0);
+}
+void draw(){
+  //variables
+  int s=second();
+  int m=minute();
+  int h=hour();
+  pushMatrix();
+  translate(width*3/4,height/2);
+  ellipse(0,0,150,150);
+  //hands for the regular clock
+  float x=s*6;
+  line(0,0,30*cos(radians(x)),30*sin(radians(x)));
+  float y=m*6;
+  line(0,0,35*cos(radians(y)),45*sin(radians(y)));
+  float z=h*30;
+  line(0,0,55*cos(radians(z)),55*sin(radians(z)));
+  popMatrix();
+  pushMatrix();
+  translate(width/4,height/2);
+  ellipse(0,0,150,150);
+  //variables for the revolutionary clock
+  int ts=86400;
+  int trs= 100000;
+  float es=s+(m*60)+(h+3600);
+  float res=es*1.157;
+  float rcs=res%100;
+  float cs=es%60;
+  float rcm=rcs%100*100-rcs/100;
+  float rch=rcs%100*100*10-rcs-rcm/100000;
+  float rx=radians(rcs*3.6);
+  float ry=radians(rcm*3.6);
+  float rz=radians(rch*720);
+  //hands for the revolutionary clock
+  line(0,0,30*cos(rx),30*sin(rx));
+  line(0,0,30*cos(ry),30*sin(ry));
+  line(0,0,50*cos(rz),50*sin(rz));
+  
+  popMatrix();
+  
+  
+}
