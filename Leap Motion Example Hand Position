@@ -1,0 +1,22 @@
+LeapMotion leap;
+void setup() {
+  size(800, 500);
+  leap = new LeapMotion(this);
+}
+void draw() {
+  background(255);
+  for (Hand hand : leap.getHands ()) {
+      hand.draw();
+    int     handId             = hand.getId();
+    PVector handStabilized     = hand.getStabilizedPosition();
+    PVector handPosition       = hand.getPosition();
+   
+    if(handPosition.x >= 205 && handPosition.x <= 405){
+      background(0,255,0);
+    } else{
+      background(255,0,0);
+    }
+    }
+}
+
+
