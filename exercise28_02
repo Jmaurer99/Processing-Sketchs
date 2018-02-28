@@ -1,0 +1,35 @@
+/*Jackson Maurer
+intro to coding
+28-2-18
+*/
+import processing.serial.*;
+
+import cc.arduino.*;
+
+Arduino arduino;
+
+int ledPin = 13;
+int potPin = 0;
+int delayVal;
+
+void setup() {
+//println(Arduino.list());
+arduino = new Arduino(this, Arduino.list()[0], 57600);
+arduino.pinMode(ledPin, Arduino.OUTPUT);
+size(200,200);
+noStroke();
+
+}
+
+void draw() {
+delayVal = int(map(arduino.analogRead(potPin),0,1024,1,500);
+arduino.digitalWrite(ledPin, Arduino.HIGH);
+delay(500);
+arduino.digitalWrite(ledPin, Arduino.LOW);
+delay(1000);
+for(int x=5; x<50; x+=5){
+float n=map(x,5,95,-2,2);
+float p= pow(n,4);
+float ypos=lerp(10,40,p);
+}
+}
