@@ -1,0 +1,32 @@
+/* Jackson Maurer
+Dr. von Nagy
+intro to coding
+3-9-18
+*/
+float angle = 0.0;   
+float speed = 5;   
+float radius = 30.0; 
+float sx = 2.0;
+float sy = 2.0;
+
+void setup() {
+  size(800, 400);
+  noStroke();
+}
+
+void draw() {
+  fill(0, 4);
+  rect(0, 0, width, height); 
+  angle += speed; 
+  float sinval = sin(angle);
+  float cosval = cos(angle);
+  // Set the position of the small circle based on new
+  // values from sine and cosine
+  float x = 50 + (cosval * radius);
+  float y = 50 + (sinval * radius);
+  fill(255);
+  translate(width/4,height/8);
+  scale(4);
+  ellipse(x, y, 2, 2);  
+    
+}
