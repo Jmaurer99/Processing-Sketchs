@@ -1,0 +1,37 @@
+/*Jackson Maurer
+Dr. von Nagy
+intro to coding
+3-20-18
+*/
+
+float x = 30.0;  // X-coordinate
+float y = 50.0;   // Y-coordinate
+int r = 80;   // Starting radius
+int n = 2;    // Number of recursions
+int pr = 5;
+
+void setup() { 
+  size(500, 500); 
+  noStroke(); 
+  } 
+
+void draw() {
+  background(255);
+    drawCircle(x, y, r+50, n,pr); 
+
+}  
+
+void drawCircle(float x, float y, int radius, int num,int pr) {                    
+  float value = 255 * num / 9.0; 
+  fill(value, 153); 
+  ellipse(x+250, y+250, radius, radius);      
+ 
+    int branches = int(2*PI*radius); 
+    for (int i = 0; i < branches; i++) { 
+      float a = random(0, TWO_PI); 
+      float newx = x + cos(a) * radius/2; 
+      float newy = y + sin(a) * radius/2;
+      drawCircle(newx, newy, radius/7, num,pr); 
+  
+  } 
+}
