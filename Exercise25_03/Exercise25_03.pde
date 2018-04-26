@@ -2,6 +2,7 @@
 Coding
 Dr. von Nagy
 December 11 2017
+This code now inserts a camera so you can move the sphere and boxes along the z axis away and towards the viewer.
 */
 int i=0;
 String Supreme="Supreme";

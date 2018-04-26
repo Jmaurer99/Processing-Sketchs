@@ -1,0 +1,21 @@
+/* Jackson Maurer
+intro to coding
+3-6-18
+*/
+void setup () {
+  size (600, 100);
+  background(255);
+}
+void draw () {
+  
+  float offset = 15.0;
+  float scaleVal= 55.0;
+  float angleInc= PI/27.0;
+  float angle = 5.0;
+noFill();
+  for (int x=0; x<width; x+=3) {
+    float y=offset +(sin (angle)*scaleVal+5);
+    ellipse (x, y, 1, 35);
+    angle+=angleInc;
+  }
+}

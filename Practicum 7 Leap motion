@@ -1,0 +1,156 @@
+/*Jackson Maurer
+Dr. von Nagy
+Intro to coding
+2-9-18
+*/
+
+import de.voidplus.leapmotion.*;
+
+// ======================================================
+// Table of Contents:
+// ├─ 1. Callbacks
+// ├─ 2. Hand
+// ├─ 3. Arms
+// ├─ 4. Fingers
+// ======================================================
+
+
+LeapMotion leap;
+
+void setup() {
+  
+  size(800, 500);
+  background(255);
+  // ...
+
+  leap = new LeapMotion(this);
+}
+
+
+// ======================================================
+// 1. Callbacks
+
+void leapOnInit() {
+  // println("Leap Motion Init");
+}
+void leapOnConnect() {
+  // println("Leap Motion Connect");
+}
+void leapOnFrame() {
+  // println("Leap Motion Frame");
+}
+void leapOnDisconnect() {
+  // println("Leap Motion Disconnect");
+}
+void leapOnExit() {
+  // println("Leap Motion Exit");
+}
+
+
+void draw() {
+//  background(255);
+  // ...
+
+  int fps = leap.getFrameRate();
+  for (Hand hand : leap.getHands ()) {
+
+
+    // ==================================================
+    // 2. Hand
+
+    int     handId             = hand.getId();
+    PVector handPosition       = hand.getPosition();
+    PVector handStabilized     = hand.getStabilizedPosition();
+    PVector handDirection      = hand.getDirection();
+    PVector handDynamics       = hand.getDynamics();
+    float   handRoll           = hand.getRoll();
+    float   handPitch          = hand.getPitch();
+    float   handYaw            = hand.getYaw();
+    boolean handIsLeft         = hand.isLeft();
+    boolean handIsRight        = hand.isRight();
+    float   handGrab           = hand.getGrabStrength();
+    float   handPinch          = hand.getPinchStrength();
+    float   handTime           = hand.getTimeVisible();
+    PVector spherePosition     = hand.getSpherePosition();
+    float   sphereRadius       = hand.getSphereRadius();
+
+    // --------------------------------------------------
+    // Drawing
+   //hand.draw();
+
+int roll= round(handRoll*10000); // rounds the roll amount to the nearest whole number
+    // ==================================================
+    // 4. Finger
+
+    Finger  fingerThumb        = hand.getThumb();
+    // or                        hand.getFinger("thumb");
+    // or                        hand.getFinger(0);
+
+    Finger  fingerIndex        = hand.getIndexFinger();
+    // or                        hand.getFinger("index");
+    // or                        hand.getFinger(1);
+
+    Finger  fingerMiddle       = hand.getMiddleFinger();
+    // or                        hand.getFinger("middle");
+    // or                        hand.getFinger(2);
+
+    Finger  fingerRing         = hand.getRingFinger();
+    // or                        hand.getFinger("ring");
+    // or                        hand.getFinger(3);
+
+    Finger  fingerPink         = hand.getPinkyFinger();
+    // or                        hand.getFinger("pinky");
+    // or                        hand.getFinger(4);
+
+
+    for (Finger finger : hand.getFingers()) {
+      // or              hand.getOutstretchedFingers();
+      // or              hand.getOutstretchedFingersByAngle();
+
+      int     fingerId         = finger.getId();
+      PVector fingerPosition   = finger.getPosition();
+      PVector fingerStabilized = finger.getStabilizedPosition();
+      PVector fingerVelocity   = finger.getVelocity();
+      PVector fingerDirection  = finger.getDirection();
+      float   fingerTime       = finger.getTimeVisible();
+
+      // ------------------------------------------------
+      // Drawing
+
+      // Drawing:
+      // finger.draw();  // Executes drawBones() and drawJoints()
+      // finger.drawBones();
+      // finger.drawJoints();
+
+      // ------------------------------------------------
+      // Selection
+
+      switch(finger.getType()) {
+      case 0:
+        // System.out.println("thumb");
+        break;
+      case 1:
+      int pinch= round(handPinch*100); // makes the value of pinch between 0-100
+      if((roll<9000)&&(roll<-9000)){ // when you roll, the canvas will reset
+      fill(0,200,0);
+      stroke(0);
+       ellipse(fingerPosition.x, fingerPosition.y, 5, 5);
+      }
+      else{
+      // background(255);
+      }
+      if((pinch>200)&&(pinch<-200)){ // when you pinch, the color will change randomly
+        fill(random(100), random(100), random(100));
+        ellipse(fingerPosition.x, fingerPosition.y,5,5);
+      }
+        break;
+      case 2:
+        // System.out.println("middle");
+        break;
+      case 3:
+        // System.out.println("ring");
+        break;
+      case 4:
+        // System.out.println("pinky");
+        break;
+      }

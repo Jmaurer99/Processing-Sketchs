@@ -1,0 +1,32 @@
+/*Jackson Maurer
+Dr. Von Nagy
+Intro to Coding
+2-21-18
+The code reads the hand position and if the hand value is less than 405 the background is red, 
+but if the hand value is greater than 205 the background is green.
+*/
+
+import de.voidplus.leapmotion.*; //imports leap motion libraries
+
+LeapMotion leap;
+void setup() {
+  size(800, 500);
+  leap = new LeapMotion(this);
+}
+void draw() {
+  background(255);
+  for (Hand hand : leap.getHands ()) {
+      hand.draw();
+    int     handId             = hand.getId();
+    PVector handStabilized     = hand.getStabilizedPosition();
+    PVector handPosition       = hand.getPosition(); //Gets the hand position for the Leap Motion
+   
+    if(handPosition.x >= 205 && handPosition.x <= 405){ 
+      background(0,255,0); //If the value is less thand 405 or greater than 205 the background is green
+    } else{
+      background(255,0,0); //Any other value results in a red background
+    }
+    }
+}
+
+
