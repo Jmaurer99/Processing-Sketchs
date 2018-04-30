@@ -214,13 +214,14 @@ class map {//class to draw the background, **not essential to know for the game*
             } 
                   if (Char.evolve == 2) {
                   if (choi == 0) {
-                    Char.seeAblity *= 55;
-                    Char.maxSpeed *= 3;
-                    Char.eatSpeed *=2;
+                    Char.seeAblity *= 5;// the animalito's sight range is increased
+                    Char.maxSpeed *= 3;// increases speed
+                    Char.eatSpeed *=2;// the animalito eats faster
                     
                   }
                  if (choi == 1) {
-                   //not done yet
+                   Char .size *=5;//increases the animalito's size
+                   Char .maxSpeed *=9;//increases speed again
                  }
                  if (choi == 2) {
                    
