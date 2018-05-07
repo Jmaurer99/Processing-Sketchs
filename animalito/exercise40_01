@@ -1,0 +1,18 @@
+/*Jackson Maurer
+Intro to coding
+Dr. von Nagy
+subclass to the class You
+*/
+class U2 {
+  void display(float x,float y){
+    
+    fill(x%255,y%255,0);//modulus
+    
+  }
+}
+if (key==CODED){
+      if(keyCode==UP){
+        x+=25; println(x);//color increases when pressing up
+      } else if (keyCode==DOWN){
+        y-=25; println(y);//color decreases when pressing down
+    }
