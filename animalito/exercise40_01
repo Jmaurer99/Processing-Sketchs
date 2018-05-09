@@ -16,3 +16,4 @@ if (key==CODED){
       } else if (keyCode==DOWN){
         y-=25; println(y);//color decreases when pressing down
     }
+}
